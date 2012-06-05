@@ -1,0 +1,126 @@
+body {
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: #630;
+  min-height: 800px;
+}
+
+.container {
+  background-image: url(../img/logo.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  padding-top: 30px;
+}
+
+#chart { margin: 10px auto; border: 3px solid steelblue; width: 720px; font: 10px sans-serif; background: rgba(255,255,255,.75); }
+#chart line, #chart rect { stroke: #000; stroke-width: 1.5px; fill: #fff; }
+#chart .center { stroke-dasharray: 3 3;}
+#chart .median {stroke: mediumseagreen; fill: limegreen;}
+
+#chart .red {fill: #E92B32;}
+#chart .blue {fill: steelblue;}
+#chart .legend {text-anchor: middle; font-size: 14px; font-family: Helvetica, sans-serif;}
+#chart .tick_open { fill: grey;}
+#chart .tick_close { fill: lightgrey;}
+
+.button, input[type=button], input[type=submit], button {
+    text-decoration: none;
+    border-color:#888;
+    border-color:rgba(0, 0, 0, 0.56);
+    cursor: pointer;
+    outline: none;
+    color:#111;
+    font-family:"Lucida Grande","Lucida Sans","Lucida Sans Unicode","Segoe UI",Verdana,sans-serif;
+    display:inline-block;
+    vertical-align:top;
+    position:relative;
+    font-size:12px;
+    font-weight:bold;
+    text-align:center;
+    background-color:#aaa;
+    background-image:url(gradient.png);
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,.75), rgba(255,255,255,0));
+    background-image: -o-linear-gradient(top, rgba(255,255,255,.75), rgba(255,255,255,0));
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.75)), to(rgba(255,255,255,0)));
+    background-image: linear-gradient(top, rgba(255,255,255,.75), rgba(255,255,255,0));
+    background-repeat:repeat-x;
+    text-shadow:1px 1px 0 rgba(255,255,255,.67);
+    line-height:2;
+    margin:0 0 2em 1em;
+    padding:0 1em;
+    height:2em;
+    -moz-box-shadow:1px 1px 0 rgba(255,255,255,.5) inset, -1px -1px 0 rgba(255,255,255,.5) inset;
+    -webkit-box-shadow:1px 1px 0 rgba(255,255,255,.5) inset, -1px -1px 0 rgba(255,255,255,.5) inset;
+    box-shadow:1px 1px 0 rgba(255,255,255,.5) inset, -1px -1px 0 rgba(255,255,255,.5) inset;
+    -webkit-transition: background .185s linear;
+    -moz-transition: all .185s linear;
+    -o-transition: all .185s linear;
+    transition: all .185s linear;
+    /** Make the text unselectable **/
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+.button, .button:after, button, button:after, input[type=submit], input[type=button] {
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    border-width:1px;
+    border-style:solid;
+
+}
+.button:after, button:after{
+    display:block;
+    position:absolute;
+    content:' ';
+    width:100%;
+    height:100%;
+    border-color: transparent transparent #ccc;
+    border-color: transparent transparent rgba(255, 255, 255, 0.67);
+    bottom:-2px;
+    left:-1px;
+}
+.button:hover, .button:focus, button:hover, button:focus, input[type=button]:hover, input[type=button]:focus, input[type=submit]:hover, input[type=submit]:focus {
+    background-color:#a8c0cb;
+}
+.button:active, button:active, input[type=submit]:active, input[type=button]:active {
+    line-height:2.2;
+    -moz-box-shadow
+        :0 .33em 1em rgba(0,0,0,.67) inset,
+        1px 1px 0 rgba(255,255,255,.25) inset,
+        -1px -1px 0 rgba(255,255,255,.25) inset;
+    -webkit-box-shadow:
+        0 .33em 2em rgba(0,0,0,.67) inset,
+        1px 1px 0 rgba(255,255,255,.25) inset,
+        -1px -1px 0 rgba(255,255,255,.25) inset;
+    box-shadow:
+        0 .33em 2em rgba(0,0,0,.67) inset,
+        1px 1px 0 rgba(255,255,255,.25) inset,
+        -1px -1px 0 rgba(255,255,255,.25) inset;
+        -webkit-transition: line-height .1s linear;
+        -moz-transition: all .1s linear;
+        -o-transition: all .1s linear;
+        transition: all .1s linear;
+}
+.button.bg, .button.bg:hover, .button.bg:focus {
+    background-image: -moz-linear-gradient(top, rgba(255,255,255,.75), rgba(255,255,255,0));
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(255,255,255,.8)), to(rgba(255,255,255,0)));
+}
+
+/* Colors/Styles */
+button.darkblue {
+    background-color:#046;
+    color:#fff;
+    text-shadow:-1px -1px 0 rgba(0,0,0,.3);
+}
+button.darkblue:hover {
+    background-color:#00547e;
+}
+
+button.active {
+    box-shadow:
+    0 .33em 2em rgba(0,0,0,.67) inset,
+    1px 1px 0 rgba(255,255,255,.25) inset,
+    -1px -1px 0 rgba(255,255,255,.25) inset;
+
+}

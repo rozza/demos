@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Twitter Aggregation</title>
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/static/css/bootstrap-responsive.min.css" rel="stylesheet">
+        <link href="/static/css/theme.css" rel="stylesheet">
+        <script type='text/javascript' src='/static/js/jquery.min.js'></script>
+        <script type='text/javascript' src='/static/js/site.js'></script>
+        <link rel="shortcut icon" href="/static/img/favicon.ico">
+        <meta http-equiv="refresh" content="20">
+  </head>
+  <body>
+    <div class="container">
+        <div class="span6">
+          <h1>Twitter Feed</h1>
+            {% for x in last %}
+            <div class="row tweets">
+              <div class="left rounded">
+                <img src="{{ x["user"]["profile_image_url"] }}"/>
+              </div>
+              <div class="tweet">
+                {{ x["text"] }}
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="span4 offset1">
+            <h1>Top Posters</h1>
+              <div class="row">
+              {% for x in posters %}
+              <div class=" data">
+                <div class="span2">{{ x._id }}</div>
+                <div  class="span1">{{ x.total }}</div>
+              </div>
+              {% endfor %}
+            </div>
+            <h1>Top Mentions</h1>
+              <div class="row">
+              {% for x in mentions %}
+              <div class=" data">
+                <div class="span2">{{ x._id }}</div>
+                <div class="span1">{{ x.value }}</div>
+              </div>
+              {% endfor %}
+              </div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
+
