@@ -9,7 +9,7 @@ from flask import request
 
 app = flask.Flask(__name__)
 
-db = pymongo.Connection().test
+db = pymongo.Connection().demo
 db.money.ensure_index("ts")
 
 
