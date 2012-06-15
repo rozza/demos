@@ -13,7 +13,7 @@ body {
   padding-top: 30px;
 }
 
-#chart { margin: 40px auto 0px; border: 3px solid steelblue; width: 720px; font: 10px sans-serif; background: rgba(255,255,255,.75); }
+#chart { margin: 40px auto 0px; border: 3px solid steelblue; min-width: 600px; max-width: 720px; font: 10px sans-serif; background: rgba(255,255,255,.75); }
 #chart line, #chart rect { stroke: #000; stroke-width: 1.5px; fill: #fff; }
 #chart .center { stroke-dasharray: 3 3;}
 #chart .median {stroke: mediumseagreen; fill: limegreen;}
@@ -125,18 +125,3 @@ button.active {
 
 }
 
-
-/* 800 x 600 hacks */
-/*  Uncomment if low res projector
-
-.container {
-  background-position: 85% 85px;
-  width: auto !important;
-}
-
-#chart { margin: 10px auto 0px; }
-
-.button {
-  margin: 10px 5px;
-}
-*/

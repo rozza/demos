@@ -18,7 +18,6 @@ var y = d3.scale.linear()
 
 var chart = d3.select("#chart").append("svg")
     .attr("class", "chart")
-    .attr("width", w * 6 - 1)
     .attr("height", h);
 
 var page = 0;
