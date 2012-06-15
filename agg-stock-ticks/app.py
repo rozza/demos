@@ -17,6 +17,7 @@ db.money.ensure_index("ts")
 def index():
     return flask.render_template("index.html")
 
+
 @app.route("/money.json")
 def money():
 
@@ -39,7 +40,7 @@ def money():
                      "ask": 1
                     }
                   },
-                  {"$sort": {"minute": 1}},
+                  {"$sort": {"ts": 1}},
                   {"$group": {
                       "_id": "$minute",
                       "bid_open": {"$first": "$bid"},

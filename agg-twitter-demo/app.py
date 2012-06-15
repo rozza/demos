@@ -40,6 +40,8 @@ def index():
     mentions = mentions[0:8]
 
 # -----------------------------------------------------------------------------
+# With the new aggregation framework
+
     posters = db.command("aggregate", "tweets",
                 pipeline=[
                     {"$match": {"user.screen_name": {"$exists": True}}},
@@ -48,6 +50,9 @@ def index():
                     {"$sort": {"total": -1}},
                     {"$limit": 8}
                 ])["result"]
+
+
+
 
 # -----------------------------------------------------------------------------
 
