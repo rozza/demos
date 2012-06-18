@@ -15,4 +15,4 @@ Import data
 
 Run example script - examine variables
 --------------------------------------
-* ./mongodb/bin/mongo ./agg-general/demo.js --shell
+* ./mongodb/bin/mongo ./general/demo.js --shell

@@ -15,7 +15,7 @@ Mongod
 Load the data
 -------------
 
-* ./mongodb/bin/mongorestore -d test -c money --drop ./agg-stock-ticks/money.bson
+* ./mongodb/bin/mongorestore -d test -c money --drop ./stock-ticks/money.bson
 
 Start web app
 -------------
@@ -28,4 +28,4 @@ All set
 
 Run example script - examine variables
 --------------------------------------
-* ./mongodb/bin/mongo ./agg-stock-ticks/demo.js --shell
+* ./mongodb/bin/mongo ./stock-ticks/demo.js --shell
