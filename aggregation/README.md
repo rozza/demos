@@ -1,9 +1,3 @@
-
-=====
-DEMOS
-=====
-
-
 Aggregation
 ===========
 
@@ -25,9 +19,3 @@ twitter-demo
 Live example of streaming in twitter data by tags.
 
 Shows the difference between a map / reduce and aggregation.
-
-
-Europython
-==========
-
-workshop

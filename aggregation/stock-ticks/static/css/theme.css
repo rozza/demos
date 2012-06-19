@@ -6,7 +6,7 @@ body {
   min-height: 800px;
 }
 
-.container {
+.container-fluid {
   background-image: url(../img/logo.png);
   background-repeat: no-repeat;
   background-position: right top;
