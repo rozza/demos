@@ -193,6 +193,7 @@ var u2 = db.runCommand(
 ]});
 
 
+// Find all comments by jenny
 // match, unwind and match
 var u3 = db.runCommand(
 { aggregate : "article", pipeline : [
