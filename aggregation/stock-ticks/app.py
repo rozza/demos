@@ -29,12 +29,13 @@ def money():
     ticks = db.command("aggregate", "money",
             pipeline=[
                 {"$project": {
-                    "minute": {"$isoDate": {
-                        "year": {"$year": "$ts"},
-                        "month": {"$month": "$ts"},
-                        "dayOfMonth": {"$dayOfMonth": "$ts"},
-                        "hour": {"$hour": "$ts"},
-                        "minute": {"$minute": "$ts"}}},
+                    "minute": {
+                        "0": {"$year": "$ts"},
+                        "1": {"$month": "$ts"},
+                        "2": {"$dayOfMonth": "$ts"},
+                        "3": {"$hour": "$ts"},
+                        "4": {"$minute": "$ts"}
+                      },
                      "ts": 1,
                      "bid": 1,
                      "ask": 1
@@ -43,6 +44,7 @@ def money():
                   {"$sort": {"ts": 1}},
                   {"$group": {
                       "_id": "$minute",
+                      "ts": {"$first": "$ts"},
                       "bid_open": {"$first": "$bid"},
                       "bid_close": {"$last": "$bid"},
                       "bid_high": {"$max": "$bid"},
@@ -55,11 +57,11 @@ def money():
                       "ask_avg": {"$avg": "$ask"}
                     }
                   },
-                  {"$sort": {"_id": 1}},
+                  {"$sort": {"ts": 1}},
                   {"$skip": skip},
                   {"$limit": limit},
                   {"$project": {
-                      "_id": 1,
+                      "_id": "$ts",
                       "bid": {
                         "open": "$bid_open",
                         "close": "$bid_close",
@@ -90,4 +92,4 @@ class JSONEncoder(flask.json.JSONEncoder):
 
 if __name__ == "__main__":
     debug = any([x == 'debug' for x in sys.argv])
-    app.run(debug=False, host='0.0.0.0', port=4000)
+    app.run(debug=debug, host='0.0.0.0', port=4000)

@@ -76,7 +76,6 @@ var p4 = db.runCommand(
   }}
 ]});
 
-
 // projection includes a virtual (fabricated) document
 var p5 = db.runCommand(
 { aggregate : "article", pipeline : [
@@ -140,7 +139,7 @@ var c3 = db.runCommand(
 
 
 
-/* Date arithmetic */
+/* Date arithmetic */  /* No longer works */
 var c4 = db.runCommand(
 {aggregate : "article", pipeline : [
   { $project : {
@@ -151,8 +150,6 @@ var c4 = db.runCommand(
     fiveMinutesAfter : { $add : ["$posted", (1 / 24 / 60) * 5 ]},
   }}
 ]});
-
-
 
 
 // Ternary conditional operator
@@ -167,8 +164,6 @@ var c5 = db.runCommand(
                                "$pageViews"]}
   }}
 ]});
-
-
 
 /********************/
 /* Unwinding Arrays */
@@ -204,8 +199,6 @@ var u3 = db.runCommand(
   { $unwind : "$comments" },
   { $match : { "comments.author" : "jenny" } },
 ]});
-
-
 
 
 /************/

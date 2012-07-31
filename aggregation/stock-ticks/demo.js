@@ -8,13 +8,12 @@ var a1 = db.runCommand(
 { aggregate : "money", pipeline : [
   {$project : {
     minute : {
-      $isoDate : {
-        year : { $year : "$ts"},
-        month : { $month : "$ts"},
-        dayOfMonth : { $dayOfMonth : "$ts" },
-        hour : { $hour : "$ts" },
-        minute : { $minute : "$ts" }
-      }},
+      0: {"$year": "$ts"},
+      1: {"$month": "$ts"},
+      2: {"$dayOfMonth": "$ts"},
+      3: {"$hour": "$ts"},
+      4: {"$minute": "$ts"}
+    },
     ts : 1,
     bid : 1,
     ask : 1
@@ -27,13 +26,12 @@ var a2 = db.runCommand(
 { aggregate : "money", pipeline : [
   {$project : {
     minute : {
-      $isoDate : {
-        year : { $year : "$ts"},
-        month : { $month : "$ts"},
-        dayOfMonth : { $dayOfMonth : "$ts" },
-        hour : { $hour : "$ts" },
-        minute : { $minute : "$ts" }
-    }},
+      0: {"$year": "$ts"},
+      1: {"$month": "$ts"},
+      2: {"$dayOfMonth": "$ts"},
+      3: {"$hour": "$ts"},
+      4: {"$minute": "$ts"}
+    },
     ts : 1,
     bid : 1,
     ask : 1
@@ -62,13 +60,12 @@ var a3 = db.runCommand(
 { aggregate : "money", pipeline : [
   {$project : {
     minute : {
-      $isoDate : {
-        year : { $year : "$ts"},
-        month : { $month : "$ts"},
-        dayOfMonth : { $dayOfMonth : "$ts" },
-        hour : { $hour : "$ts" },
-        minute : { $minute : "$ts" }
-    }},
+      0: {"$year": "$ts"},
+      1: {"$month": "$ts"},
+      2: {"$dayOfMonth": "$ts"},
+      3: {"$hour": "$ts"},
+      4: {"$minute": "$ts"}
+    },
     ts : 1,
     bid : 1,
     ask : 1
@@ -76,6 +73,7 @@ var a3 = db.runCommand(
   { $sort  : { "ts" : 1 }},
   { $group : {
       _id       : "$minute",
+      ts        : { $first: "$ts"},
       bid_open  : { $first : "$bid"},
       bid_close : { $last : "$bid"},
       bid_high  : { $max : "$bid"},
@@ -98,13 +96,12 @@ var a4 = db.runCommand(
 { aggregate : "money", pipeline : [
   {$project : {
     minute : {
-      $isoDate : {
-        year : { $year : "$ts"},
-        month : { $month : "$ts"},
-        dayOfMonth : { $dayOfMonth : "$ts" },
-        hour : { $hour : "$ts" },
-        minute : { $minute : "$ts" }
-    }},
+      0: {"$year": "$ts"},
+      1: {"$month": "$ts"},
+      2: {"$dayOfMonth": "$ts"},
+      3: {"$hour": "$ts"},
+      4: {"$minute": "$ts"}
+    },
     ts : 1,
     bid : 1,
     ask : 1
@@ -112,6 +109,7 @@ var a4 = db.runCommand(
   { $sort  : { "ts" : 1 }},
   { $group : {
       _id       : "$minute",
+      ts        : { $first: "$ts"},
       bid_open  : { $first : "$bid"},
       bid_close : { $last : "$bid"},
       bid_high  : { $max : "$bid"},
@@ -128,7 +126,7 @@ var a4 = db.runCommand(
   { $skip : 0 },
   { $limit : 5 },
   { $project : {
-    _id : 1,
+    _id : "$ts",
     bid : {
       open  : "$bid_open",
       close : "$bid_close",
