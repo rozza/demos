@@ -1,4 +1,3 @@
-
 SETUP
 ======
 
@@ -15,7 +14,7 @@ Mongod
 Load the data
 -------------
 
-* ./mongodb/bin/mongorestore -d test -c money --drop ./stock-ticks/money.bson
+* ./mongodb/bin/mongorestore -d demo -c money --drop ./stock-ticks/money.bson
 
 Start web app
 -------------
