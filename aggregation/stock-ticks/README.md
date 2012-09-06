@@ -23,6 +23,9 @@ Start web app
 All set
 -------
 
+![Stock ticks](https://raw.github.com/rozza/demos/master/aggregation/stock-ticks/stock-ticks.png)
+
+
 [http://127.0.0.1:4000](http://127.0.0.1:4000/)
 
 Run example script - examine variables

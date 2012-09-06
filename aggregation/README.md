@@ -12,6 +12,7 @@ stock-ticks
 
 Simple web app converting stock tick data to candlestick data
 
+![Stock ticks](https://raw.github.com/rozza/demos/master/aggregation/stock-ticks/stock-ticks.png)
 
 twitter-demo
 ------------
