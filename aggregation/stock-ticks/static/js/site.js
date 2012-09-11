@@ -1,7 +1,3 @@
-var margin = {top: 10, right: 50, bottom: 20, left: 50},
-    width = 120 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
 var load_next = true;
 var w = 120,
     h = 500,
@@ -59,7 +55,7 @@ function redraw(data) {
 
   y = d3.scale.linear()
       .domain([min, max])
-      .range([450, 10]);
+      .range([450, 30]);
 
   // Update center line: the vertical line spanning the whiskers.
   var center = chart.selectAll("line.center")
