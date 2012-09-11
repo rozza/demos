@@ -1,0 +1,13 @@
+
+35 min talk - 10 mins q&a
+===========
+
+TECHOPS-157
+
+Caveats - section
+new in 2.2
+Show at the end
+
+reveal.js - http://lab.hakim.se/reveal-js/
+reveal demo - https://github.com/rozza/trying-out-reveal
+aggregation candlestick demo - https://github.com/rozza/demos/tree/master/aggregation
