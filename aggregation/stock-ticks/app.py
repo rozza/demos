@@ -49,12 +49,7 @@ def money():
                       "bid_close": {"$last": "$bid"},
                       "bid_high": {"$max": "$bid"},
                       "bid_low": {"$min": "$bid"},
-                      "bid_avg": {"$avg": "$bid"},
-                      "ask_open": {"$first": "$ask"},
-                      "ask_close": {"$last": "$ask"},
-                      "ask_high": {"$max": "$ask"},
-                      "ask_low": {"$min": "$ask"},
-                      "ask_avg": {"$avg": "$ask"}
+                      "bid_avg": {"$avg": "$bid"}
                     }
                   },
                   {"$sort": {"ts": 1}},
@@ -68,13 +63,6 @@ def money():
                         "high": "$bid_high",
                         "low": "$bid_low",
                         "avg": "$bid_avg"
-                      },
-                      "ask": {
-                        "open": "$ask_open",
-                        "close": "$ask_close",
-                        "high": "$ask_high",
-                        "low": "$ask_low",
-                        "avg": "$ask_avg"
                       }
                     }
                   },

@@ -43,12 +43,7 @@ var a2 = db.runCommand(
       bid_close : { $last : "$bid"},
       bid_high  : { $max : "$bid"},
       bid_low   : { $min : "$bid"},
-      bid_avg   : { $avg : "$bid"},
-      ask_open  : { $first : "$ask"},
-      ask_close : { $last : "$ask"},
-      ask_high  : { $max : "$ask"},
-      ask_low   : { $min : "$ask"},
-      ask_avg   : { $avg : "$ask"}
+      bid_avg   : { $avg : "$bid"}
     }
   },
   { $limit : 1}
@@ -78,12 +73,7 @@ var a3 = db.runCommand(
       bid_close : { $last : "$bid"},
       bid_high  : { $max : "$bid"},
       bid_low   : { $min : "$bid"},
-      bid_avg   : { $avg : "$bid"},
-      ask_open  : { $first : "$ask"},
-      ask_close : { $last : "$ask"},
-      ask_high  : { $max : "$ask"},
-      ask_low   : { $min : "$ask"},
-      ask_avg   : { $avg : "$ask"}
+      bid_avg   : { $avg : "$bid"}
     }
   },
   { $sort  : { _id : 1 }},
@@ -114,12 +104,7 @@ var a4 = db.runCommand(
       bid_close : { $last : "$bid"},
       bid_high  : { $max : "$bid"},
       bid_low   : { $min : "$bid"},
-      bid_avg   : { $avg : "$bid"},
-      ask_open  : { $first : "$ask"},
-      ask_close : { $last : "$ask"},
-      ask_high  : { $max : "$ask"},
-      ask_low   : { $min : "$ask"},
-      ask_avg   : { $avg : "$ask"}
+      bid_avg   : { $avg : "$bid"}
     }
   },
   { $sort : { _id : 1 }},
@@ -133,13 +118,6 @@ var a4 = db.runCommand(
       high  : "$bid_high",
       low   : "$bid_low",
       avg   : "$bid_avg"
-      },
-    ask : {
-      open  : "$ask_open",
-      close : "$ask_close",
-      high  : "$ask_high",
-      low   : "$ask_low",
-      avg   : "$ask_avg"
       }
     }
   }

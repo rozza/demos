@@ -43,16 +43,12 @@ loadNext();
 function redraw(data) {
   if (data.length < 6) { return }
 
-  var bid_data = [],
-      ask_data = [],
-      all_data = [];
+  var bid_data = [];
 
   data.forEach(function(d) {
     bid_data.push(d.bid.high, d.bid.low);
-    ask_data.push(d.ask.high, d.ask.low);
   });
-
-  all_data = bid_data.concat(ask_data).sort();
+  all_data = bid_data.sort();
 
   new_min = all_data[0];
   new_max = all_data[all_data.length-1];
