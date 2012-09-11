@@ -7,12 +7,12 @@ general
 General demo of various aggregation operations
 
 
-stock-ticks
+candlesticks
 -----------
 
-Simple web app converting stock tick data to candlestick data
+Simple web app converting currency bid data tick data to candlestick data
 
-![Stock ticks](https://raw.github.com/rozza/demos/master/aggregation/stock-ticks/stock-ticks.png)
+![Candlesticks](https://raw.github.com/rozza/demos/master/aggregation/candlesticks/candlesticks.png)
 
 twitter-demo
 ------------

@@ -26,7 +26,7 @@ def money():
     limit = 6
     skip = page
 
-    ticks = db.command("aggregate", "money",
+    candlesticks = db.command("aggregate", "money",
             pipeline=[
                 {"$project": {
                     "minute": {
@@ -67,7 +67,7 @@ def money():
                     }
                   },
             ])["result"]
-    return JSONEncoder().encode(ticks)
+    return JSONEncoder().encode(candlesticks)
 
 
 class JSONEncoder(flask.json.JSONEncoder):
