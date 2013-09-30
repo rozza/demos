@@ -15,8 +15,7 @@ var a1 = db.runCommand(
       4: {"$minute": "$ts"}
     },
     ts : 1,
-    bid : 1,
-    ask : 1
+    bid : 1
   }},
   { $limit : 1}
 ]});
@@ -33,8 +32,7 @@ var a2 = db.runCommand(
       4: {"$minute": "$ts"}
     },
     ts : 1,
-    bid : 1,
-    ask : 1
+    bid : 1
   }},
   { $sort  : { "ts" : 1 }},
   { $group : {
@@ -62,8 +60,7 @@ var a3 = db.runCommand(
       4: {"$minute": "$ts"}
     },
     ts : 1,
-    bid : 1,
-    ask : 1
+    bid : 1
   }},
   { $sort  : { "ts" : 1 }},
   { $group : {
@@ -93,8 +90,7 @@ var a4 = db.runCommand(
       4: {"$minute": "$ts"}
     },
     ts : 1,
-    bid : 1,
-    ask : 1
+    bid : 1
   }},
   { $sort  : { "ts" : 1 }},
   { $group : {

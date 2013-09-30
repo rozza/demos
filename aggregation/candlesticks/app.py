@@ -37,8 +37,7 @@ def money():
                         "4": {"$minute": "$ts"}
                       },
                      "ts": 1,
-                     "bid": 1,
-                     "ask": 1
+                     "bid": 1
                     }
                   },
                   {"$sort": {"ts": 1}},
