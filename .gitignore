@@ -3,3 +3,4 @@
 *.credentials
 *.DS_Store
 mongod*
+.ipynb_checkpoints
