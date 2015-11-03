@@ -128,6 +128,7 @@ svg.append('g')
 
 
 var data, page=0;
+var waitMulti=2000;
 var load_next=true;
 var loading=false;
 var feed;
@@ -146,11 +147,9 @@ function toggle() {
 function getReloadUrl(){
   current = location.href.substring(location.href.lastIndexOf("/"));
   switch (current) {
-    case "/min":
     case "/":
       return "/minticks.json?page=";
     case "/five":
-    case "/sparked":
       return "/fiveticks.json?page=";
     default:
       return "/minticks.json?page=";
@@ -161,6 +160,15 @@ function load(){
   loading = true;
   var url = getReloadUrl();
   d3.json(url+page, function(raw) {
+      if (!raw.length) {
+        if (waitMulti > 10000) {
+          waitMulti = 2000;
+        }
+        waitMulti = waitMulti * 1.25;
+        setTimeout(function() { load(); }, (Math.random()*waitMulti));
+        return;
+      }
+
       var accessor = ohlc.accessor();
       feed = raw.map(function(d) {
             return {
